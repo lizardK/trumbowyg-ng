@@ -2,20 +2,13 @@ module.exports = function (grunt) {
     'use strict';
     require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
 
-    /**
-     * NOTE for CSS/LESS:
-     * - (src/CSS -> dist/CSS) : use [concat:css, autoprefixer, cssmin]
-     * - (src/LESS -> dist/CSS) : use [less, autoprefixer, cssmin]
-     * - (src/LESS -> dist/LESS) : use [copy:less]
-     */
-
     grunt.initConfig({
         pkg      : grunt.file.readJSON('package.json'),
         bower    : grunt.file.readJSON('bower.json'),
         distdir  : 'dist',
         srcdir   : 'src',
         builddir : '.work/.tmp',
-        name     : grunt.file.readJSON('package.json').name || 'responsive-tabs',   // module name
+        name     : grunt.file.readJSON('package.json').name || 'trumbowyg-ng',   // module name
 
         // Clean
         clean      : {
@@ -34,17 +27,6 @@ module.exports = function (grunt) {
                 files : {
                     '<%= distdir %>/<%= name %>.js' : '<%= builddir %>/<%= name %>.js'
                 }
-            },
-            // Copy LESS files to dist/
-            less : {
-                files : [
-                    {
-                        expand : true,
-                        cwd    : '<%= srcdir %>',
-                        src    : 'less/**/*',
-                        dest   : '<%= distdir %>/'
-                    }
-                ]
             }
         },
 
@@ -56,14 +38,6 @@ module.exports = function (grunt) {
                         '<%= srcdir %>/<%= name %>.js',
                         '<%= srcdir %>/**/*.js',
                         '!<%= srcdir %>/**/*.spec.js'
-                    ]
-                }
-            },
-            // use this only if you don't use LESS!
-            css : {
-                files : {
-                    '<%= builddir %>/<%= name %>.css' : [
-                        '<%= srcdir %>/**/*.css',
                     ]
                 }
             }
@@ -90,17 +64,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Create CSS from LESS
-        less : {
-            dist : {
-                options: {
-                    compress : false
-                },
-                files : {
-                    '<%= builddir %>/<%= name %>.css' : ['<%= srcdir %>/**/*.less']
-                }
-            }
-        },
         // ... and its prefixed vendor styles
         autoprefixer: {
             options: {
@@ -109,15 +72,6 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= distdir %>/<%= name %>.css' : ['<%= builddir %>/<%= name %>.css']
-                }
-            }
-        },
-        // ... and now minify it
-        cssmin : {
-            options: {},
-            dist : {
-                files: {
-                    '<%= distdir %>/<%= name %>.min.css' : ['<%= distdir %>/<%= name %>.css']
                 }
             }
         },
@@ -192,11 +146,6 @@ module.exports = function (grunt) {
         'concat:dist',
         'ngAnnotate',
         'uglify',
-        // 'concat:css',
-        // 'less',
-        // 'autoprefixer',
-        // 'cssmin',
-        // 'copy:less',
         'copy:dist'
     ]);
 
