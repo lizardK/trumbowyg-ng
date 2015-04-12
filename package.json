@@ -1,6 +1,6 @@
 {
   "name": "trumbowyg-ng",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "Angular directive for wysiwyg editor Trumbowyg",
   "main": "./dist/trumbowyg-ng.min.js",

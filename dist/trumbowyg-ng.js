@@ -21,11 +21,10 @@ angular.module('trumbowyg-ng').directive('trumbowygNg',
                 };
 
                 angular.element(element).trumbowyg(options).on('tbwchange', function () {
-                    console.log('dsdf');
-                    ngModelCtrl.$setViewValue(angular.element(element).trumbowyg('html'));                    
+                    ngModelCtrl.$setViewValue(angular.element(element).trumbowyg('html'));
                 }).on('tbwpaste', function () {
-                    ngModelCtrl.$setViewValue(angular.element(element).trumbowyg('html'));                    
-                });                
+                    ngModelCtrl.$setViewValue(angular.element(element).trumbowyg('html'));
+                });
             }
         };
     });
