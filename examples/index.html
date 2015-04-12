@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>trumbowyg-ng</title>
+        <link rel="stylesheet" href="../client/bower_components/trumbowyg/dist/ui/trumbowyg.min.css" />
+    </head>
+    <body ng-app="app" ng-controller="AppCtrl">
+        <h1>Trumbowyg angular directive</h1>
+        <pre>editorModel: <strong>{{editorModel}}</strong></pre>
+        <div trumbowyg-ng
+             ng-model="editorModel"
+             editor-config="{btns: ['viewHTML', 'bold','italic','|','justifyLeft','justifyCenter','justifyRight','|','link']}"></div>
+        <script src="../client/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../client/bower_components/angular/angular.min.js"></script>        
+        <script src="../client/bower_components/trumbowyg/dist/trumbowyg.js"></script>
+        <script src="../src/trumbowyg-ng.js"></script>
+        <script src="../src/trumbowyg-ng.directive.js"></script>
+        <script>
+         angular.module('app',['trumbowyg-ng']);
+         angular.module('app').controller('AppCtrl', function ($scope) {
+             $scope.editorModel = '<p>SKÅL !!!</p>';
+         });
+        </script>
+    </body>
+</html>
