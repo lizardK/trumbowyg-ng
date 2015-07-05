@@ -1,7 +1,7 @@
 {
     "name": "trumbowyg-ng",
     "description": "Angular directive for wysiwyg editor Trumbowyg",
-    "author": "lizardK",    
+    "author": "lizardK",
     "version": "0.0.2",
     "private": false,
     "main": "./dist/trumbowyg-ng.min.js",
@@ -24,7 +24,7 @@
         "jquery": "~2.1.3",
         "angular": "1.3.x",
         "angular-sanitize": "1.3.x",
-        "trumbowyg": "2.0.0-beta.3"
+        "trumbowyg": "2.0.0-beta.4"
     },
     "devDependencies": {
         "angular-mocks": ">=1.3.0",
