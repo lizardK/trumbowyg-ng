@@ -2,7 +2,7 @@
     "name": "trumbowyg-ng",
     "description": "Angular directive for wysiwyg editor Trumbowyg",
     "author": "lizardK",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": false,
     "main": "./dist/trumbowyg-ng.min.js",
     "repository": {
