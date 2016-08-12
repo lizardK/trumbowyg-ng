@@ -36,6 +36,7 @@ angular.module('app',['trumbowyg-ng']);
 ```html
 <div trumbowyg-ng
      ng-model="editorModel"
+     ng-disabled="disabledState"
      editor-config="{btns: ['viewHTML','bold','italic','|','link']}">
 </div>
 ```
@@ -55,7 +56,7 @@ For more on Trumbowyg see [http://alex-d.github.io/Trumbowyg/documentation.html]
 Following command will run both unit & End-to-End (e2e) tests
 
 `grunt tests`
-      
+
 # License
 
 This project is under MIT license. See [LICENSE](LICENSE) file for details.
