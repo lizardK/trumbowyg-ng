@@ -25,6 +25,10 @@ angular.module('trumbowyg-ng').directive('trumbowygNg',
                 }).on('tbwpaste', function () {
                     ngModelCtrl.$setViewValue(angular.element(element).trumbowyg('html'));
                 });
+
+                scope.$parent.$watch(attrs.ngDisabled, function(newVal){
+                    angular.element(element).trumbowyg(newVal ? 'disable' : 'enable');
+                });
             }
         };
     });
