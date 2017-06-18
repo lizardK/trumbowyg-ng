@@ -25,13 +25,13 @@ Angular directive for   [Trumbowyg](http://alex-d.github.io/Trumbowyg/) editor.
 
 # Usage
 
-##Add module to your angular app
+## Add module to your angular app
 
 ```javascript
 angular.module('app',['trumbowyg-ng']);
 ```
 
-##Use directive
+## Use directive
 
 ```html
 <div trumbowyg-ng
@@ -41,7 +41,7 @@ angular.module('app',['trumbowyg-ng']);
 </div>
 ```
 
-##Setup model
+## Setup model
 
 ```javascript
 angular.module('app').controller('AppCtrl', function ($scope) {
@@ -51,7 +51,7 @@ angular.module('app').controller('AppCtrl', function ($scope) {
 
 For more on Trumbowyg see [http://alex-d.github.io/Trumbowyg/documentation.html](http://alex-d.github.io/Trumbowyg/documentation.html)
 
-#Running tests
+# Running tests
 
 Following command will run both unit & End-to-End (e2e) tests
 
